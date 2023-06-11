@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.js"></script>
+
+  <title>Document</title>
+</head>
+<body>
+  <div class="slider" style=" height: 100%; overflow: hidden;">
+    <div *ngIf="!ContentLoaded" class="spinner-container">
+      <div class="spinner"></div>
+    </div>
+    <div *ngIf="ContentLoaded" class="container-fluid scroll-container ">
+      <div class="gridscroll" *ngFor="let photo of photoarray">
+        <!-- PLACE YOUR IMG URL HERE -->
+        <p><img class="img-fluid" src="{{photo}}" (click)="setPhotoNumber(photo)" [routerLink]="['/SinglePage']" ></p>
+      </div>
+
+
+    </div>
+
+    <div>
+      <button class="left-btn" id="left-btn">&#8249;</button>
+      <button class="right-btn" id="right-btn">&#8250;</button>
+    </div>
+  </div>
+</body>
+
+</html>
+<script>
+
+
+
+</script>
+
+<!-- container-fluid scroll-container -->

@@ -1,0 +1,222 @@
+
+.owner{
+    height: 80px;
+}
+div.nav-item.nav.justify-content-center{
+    position:fixed;
+        left:0px;
+        top:0px;
+        height:50px;
+        width:100%;
+}
+div{
+    background-color: transparent;
+}
+.navbar-brand{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: linear-gradient(to right, #a13d3d,
+    #d09174, #d3854b, #ca7c82, #464633,#55898c,#d3ab95);
+    background-blend-mode: screen;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+    font-size: 37pt;
+    text-decoration: none;
+    align-self: center;
+    animation: colorLoop 1s linear infinite;
+
+}
+@keyframes colorLoop {
+  0% { background-position: left; }
+  100% { background-position: right; }
+}
+.navbar-brand:hover{
+  color:#747c81
+}
+#navbar{
+    display: flex;
+    float: right;
+}
+.headme{
+    align-content: center;
+}
+#title:hover{
+    color: #9ca5ac;
+}
+
+.nav-link{
+    font-family: 'Michroma', sans-serif;
+    font-weight: bold;
+    color: #323436;
+
+}
+.nav-link:hover{
+    color: #b1bcc4;;
+
+}
+li.nav-item.subitem a.nav-link{
+    color: rgb(146, 146, 146);
+
+    animation: spin 1s ease-in-out;
+
+}
+@keyframes spin {
+    to {
+        transform: rotateX(360deg);
+    }
+  }
+/* animated eye */
+.eye {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    overflow: hidden;
+    top:-30px;
+    left: -3%;
+    margin-right: -19px;
+    
+  }
+  
+  .eyeball {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #323436;
+
+       overflow: hidden
+  }
+  
+  .eyelid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 1;
+    transition: all 0.5s ease;
+  }
+ 
+  .eye:hover .eyelid {
+    height: 0;
+  }
+  .closeeye {
+    height: 0;
+  }
+  .eyeContainer{
+    display: inline-flex;
+    height: 10px;
+  }
+  .titlewitheye{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+  }
+  .container-fluid{
+    height: fit-content;
+  }
+  .pupil {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #323436  }
+  @media screen and (max-width: 401px) {
+    .navbar-brand{
+
+      font-size: 20pt;
+
+  
+  }
+  /* animated eye */
+.eye {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: transparent;
+  overflow: hidden;
+  top:-30px;
+  left: -3%;
+  margin-right: -19px;
+  
+}
+
+.eyeball {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #323436;
+
+     overflow: hidden
+}
+
+.eyelid {
+  display:none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+  z-index: 1;
+  transition: all 0.5s ease;
+}
+
+.eye:hover .eyelid {
+  height: 0;
+  display:none;
+
+}
+.closeeye {
+  height: 0;
+}
+.eyeContainer{
+  display: inline-flex;
+  height: 10px;
+  display:none;
+
+}
+.titlewitheye{
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+
+}
+
+.pupil {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #323436 ;  display:none;
+}
+ 
+  }
+  .navbar-toggler {
+    border: white;
+    background-color: white;
+    overflow: visible;
+  }
+.navbar-toggler:click {
+background: transparent;  }
+

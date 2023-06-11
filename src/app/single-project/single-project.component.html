@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="single-project.component.css">
+  </head>
+  <body>
+    <div class="container" *ngIf="!singleImage">
+      <div class="description">
+        <!-- <h1></h1> -->
+        <p *ngIf=" (type == 'Beauty' && (photoNumber.split('/')[4] == '1.jpg' || photoNumber.split('/')[4] == '4.jpg' ||photoNumber.split('/')[4] == '5.jpg' || photoNumber.split('/')[4] == '7.jpg')  )">Photographer: Mahmoud Mallah</p>
+        <p *ngIf=" (type == 'Fashion' && (photoNumber.split('/')[4] == '2.jpg'|| photoNumber.split('/')[4] == '6.jpg') )">Photographer: Anjie Kremer</p>
+        <p *ngIf=" (type == 'Fashion' && (photoNumber.split('/')[4] == '1.jpg') )">Photographer: Tetyana Pirker</p>
+        <p *ngIf=" (type == 'Default' && (photoNumber.split('/')[4] == '4.jpg' || photoNumber.split('/')[4] == '3.jpg' )  )">Photographer: Mahmoud Mallah</p>
+
+
+
+
+      </div>
+      <div class="preview" >
+        <img class='previewImage' *ngFor="let photo of photoArray" src="{{photo}}">
+      </div>
+      <div class="images" *ngFor="let photo of photoArray">
+        <img  src="{{photo}}">
+
+      </div>
+    </div>
+    <div class="container" *ngIf="singleImage">
+      <div class="images">
+        <img  src="{{photoNumber}}">
+
+      </div>
+    </div>
+  </body>
+</html>

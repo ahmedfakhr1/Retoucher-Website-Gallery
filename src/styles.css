@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "node_modules/font-awesome/css/font-awesome.css";
+/* html, body { height: 100%;overflow: hidden; } */
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Set the width of the scroll bar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+  }
+  
+  /* Set the color of the thumb and the track of the scroll bar */
+  ::-webkit-scrollbar-thumb {
+    background-color: #b3b3b3;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #242424;
+  }

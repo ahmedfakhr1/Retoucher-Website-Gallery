@@ -1,0 +1,78 @@
+<!--
+<div class="owner">
+<div>
+  <ul class="nav justify-content-left">
+    <li class="nav-item">
+      <a class="nav-link" href="#">work</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">info</a>
+    </li>
+  </ul>
+  <div class="nav-item nav justify-content-center">
+  <a id="title" href="#">AHMED FAKHR</a>
+</div>
+</div>
+</div> -->
+
+
+<nav class="navbar navbar-expand-md navbar-light bg-transparent">
+    <div class="container-fluid ">
+        <div class='titlewitheye'>
+      <a class="navbar-brand justify-content-center" href="#">AHMED FAKHR</a>
+      <div class="eyeContainer"><div class="eye">
+        <div id = 'eyes2'class="eyelid">
+          <div class="pupil"></div>
+
+        </div>
+        <div class="eyeball">
+
+        </div>
+      </div>
+      <div class="eye">
+        <div id = 'eyes1'class="eyelid">
+          <div class="pupil"></div>
+
+        </div>
+        <div class="eyeball">
+
+        </div>
+      </div>
+      </div>
+    </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link"  (click)="toggle()" [routerLink]="['/home']">Work</a>
+          </li>
+          <!-- <div *ngIf="isVisibleCategorie"> -->
+            <li class="nav-item subitem" *ngIf="isVisibleCategorie">
+              <a class="nav-link"  (click)="setType('Default')" [routerLink]="['/home']">All</a>
+            </li>
+          <li class="nav-item subitem"*ngIf="isVisibleCategorie" >
+            <a class="nav-link "  (click)="setType('Portrait')" [routerLink]="['/home']">Portrait</a>
+          </li>
+          <li class="nav-item subitem" *ngIf="isVisibleCategorie">
+            <a class="nav-link"  (click)="setType('Beauty')" [routerLink]="['/home']">Beauty</a>
+          </li>
+          <li class="nav-item subitem" *ngIf="isVisibleCategorie">
+            <a class="nav-link"  (click)="setType('Fashion')" [routerLink]="['/home']">Fashion</a>
+          </li>
+          <li class="nav-item subitem" *ngIf="isVisibleCategorie">
+            <a class="nav-link"  (click)="setType('Property')" [routerLink]="['/home']">Architercture</a>
+          </li>
+
+        <!-- </div> -->
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/info']">Info</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- animated eye  -->
