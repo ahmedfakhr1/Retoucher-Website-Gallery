@@ -1,7 +1,6 @@
 import { Component,OnDestroy,OnInit,AfterViewChecked } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { PhotosService } from '../photos.service';
-import {ThemePalette} from '@angular/material/core';
 
 import {
   trigger,
@@ -31,7 +30,8 @@ export class BodyComponent implements OnInit {
   private gettingType:Subscription; //important to create a subscription
 
   constructor(private service : PhotosService) {
-
+    // service.setType('Default');
+    service.setType(window.sessionStorage.getItem('type'));
     this.gettingType= this.service.getType().subscribe
              (Type => { //message contains the data sent from service
              this.type = Type;
@@ -57,6 +57,12 @@ export class BodyComponent implements OnInit {
                 this.photoarray=this.service.Property;
                 }
               break;
+              default:{
+
+                  this.NoOfPhotos=25;
+                  this.photoarray=this.service.Defaultarray;
+
+              }
             }
             // for (let i = 2;i<this.NoOfPhotos+1;i++){
             //   this.photoarray.push(`${i}`+'.jpg');
@@ -68,8 +74,10 @@ export class BodyComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.sliderFunction();
 
+    // this.service.setType('Default');
+    this.sliderFunction();
+    this.service.setType(window.sessionStorage.getItem('type'));
     switch (this.type){
       case 'Default' :{this.NoOfPhotos=25;
         this.photoarray=this.service.Defaultarray;
@@ -92,6 +100,12 @@ export class BodyComponent implements OnInit {
         this.photoarray=this.service.Property;
         }
       break;
+      default:{
+
+        this.NoOfPhotos=25;
+        this.photoarray=this.service.Defaultarray;
+
+    }
     }
     // for (let i = 2;i<this.NoOfPhotos+1;i++){
     //   this.photoarray.push(`${i}`+'.jpg');
@@ -105,12 +119,16 @@ export class BodyComponent implements OnInit {
 
 
    setPhotoNumber(photoNumber:string){
+    this.service.setType(this.type);
 this.service.setphotoNumber(photoNumber);
+
    }
    sliderFunction(): void {
     const slider = document.querySelector('.slider') as HTMLElement;
     const leftBtn = document.querySelector('.left-btn') as HTMLElement;
     const rightBtn = document.querySelector('.right-btn') as HTMLElement;
+    const scroll_container = document.getElementById("scroll-container") as HTMLElement;
+    console.log(scroll_container)
   console.log(slider.scrollWidth)
     const scrollStep = slider.clientWidth / 4;
     const scrollDelay = 5000; // 5 seconds
@@ -137,9 +155,8 @@ this.service.setphotoNumber(photoNumber);
     // Scroll left on left button click
     leftBtn.addEventListener('click', () => {
       slider.scrollBy({
-        left: -scrollStep,
-        behavior: 'smooth'
-      });
+     left: -400,
+  behavior: "smooth",});
     });
     // Initialize touch position variables
 let touchStartX = 0;
@@ -185,12 +202,11 @@ slider.addEventListener('touchend', (event) => {
 
     // Scroll right on right button click
     rightBtn.addEventListener('click', () => {
-      console.log('right')
+      leftBtn.classList.remove('hide');
       slider.scrollBy({
-        left: scrollStep,
-        behavior: "smooth"
-      });
-    });
+        left: 400,
+     behavior: "smooth"})}
+     );
 
     // Hide buttons after 5 seconds of inactivity
     let hideTimeoutId: ReturnType<typeof setTimeout>;

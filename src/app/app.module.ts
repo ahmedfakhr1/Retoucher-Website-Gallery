@@ -12,6 +12,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SingleProjectComponent } from './single-project/single-project.component';
 import { InfoComponent } from './info/info.component';
 import { RouterModule } from '@angular/router';
+import { ContactComponent } from './contact/contact.component';
+import { ReviewsComponent } from './reviews/reviews.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { RouterModule } from '@angular/router';
     FooterComponent,
     SingleProjectComponent,
     InfoComponent,
+    ContactComponent,
+    ReviewsComponent,
   ],
   imports: [
     BrowserModule,

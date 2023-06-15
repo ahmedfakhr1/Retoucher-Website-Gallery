@@ -2,11 +2,12 @@
 IZONTAL SCROLL */
 img:hover {
   cursor: pointer;
-  
+
 }
 .slider{
   overflow: scroll;
-  top: 130px;
+  background:transparent;
+  /* top: 130px; */
 }
 .scroll-container{
     display: inline-block;
@@ -16,15 +17,16 @@ img:hover {
     height:100vh;
     position: relative;
   display: inline-block;
+  overflow-x: visible;
 
   }
-  
+
   .gridscroll{
     display:inline-block;
     /* height:84vh; */
 
   }
-  
+
   .gridscroll img {
     padding-right:22px;
     height:84vh;
@@ -74,11 +76,11 @@ html {
 body::-webkit-scrollbar {
   width: 1em;
 }
- 
+
 body::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
- 
+
 body::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
@@ -100,7 +102,7 @@ body::-webkit-scrollbar-thumb {
   background-color: #ccc;
   color: rgb(121, 121, 121);
   font-size: 60px;
-  width: 70px;    
+  width: 70px;
   opacity: 0.1;
   transition: opacity 0.3s ease;
 }
@@ -124,7 +126,7 @@ body::-webkit-scrollbar-thumb {
 .right-btn:hover {
   opacity: 0.75;
   cursor: pointer;
-} 
+}
 
 .left-btn.lowOp,
 .right-btn.lowOp {
@@ -143,13 +145,13 @@ display: none;}
     height:100vh;
 
   }
-  
+
   .gridscroll{
     display:inline-block;
     /* height:84vh; */
 
   }
-  
+
   .gridscroll img {
     padding-right:22px;
     height:100%;
@@ -162,7 +164,7 @@ display: none;}
     height:100%;
     width: 100%;
     cursor: pointer;
-    
+
   }
 }
 

@@ -19,7 +19,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-transparent">
     <div class="container-fluid ">
         <div class='titlewitheye'>
-      <a class="navbar-brand justify-content-center" href="#">AHMED FAKHR</a>
+      <a class="navbar-brand justify-content-center" (click)="setType('Default')">AHMED FAKHR</a>
       <div class="eyeContainer"><div class="eye">
         <div id = 'eyes2'class="eyelid">
           <div class="pupil"></div>
@@ -69,7 +69,13 @@
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/info']">Info</a>
           </li>
-          
+          <!-- <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/contact']">Contact</a>
+          </li> -->
+          <!-- <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/reviews']">Reviews</a>
+          </li> -->
+
         </ul>
       </div>
     </div>

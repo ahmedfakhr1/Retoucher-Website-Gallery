@@ -5,29 +5,36 @@ import { Observable, Subject } from 'rxjs';
 })
 export class PhotosService {
   Portraitarray:string[]=[
-    'https://i.ibb.co/ZxnJsZR/e.jpg',
-'https://i.ibb.co/d7jpCWx/721A3321.jpg',
-'https://i.ibb.co/J3Mb2qj/721A3298.jpg',
-'https://i.ibb.co/HdrNq24/12.jpg',
-    'https://i.ibb.co/kSn6xjz/11.jpg',
-'https://i.ibb.co/fX0DDJG/9.jpg',
+
 'https://i.ibb.co/FbfcN8P/10.jpg',
-'https://i.ibb.co/1n3P22G/8.jpg',
+
 'https://i.ibb.co/HTwPSr0/7.jpg',
-'https://i.ibb.co/k4Sf5g0/6.jpg',
+
 'https://i.ibb.co/DpQky6w/5.jpg',
 'https://i.ibb.co/Z6cWHbZ/4.jpg',
 'https://i.ibb.co/yNMgHP5/3.jpg',
 'https://i.ibb.co/4mb7pTG/2.jpg',
 'https://i.ibb.co/VMj6sRp/1.jpg',
+    'https://i.ibb.co/ZxnJsZR/e.jpg',
+'https://i.ibb.co/d7jpCWx/721A3321.jpg',
+'https://i.ibb.co/J3Mb2qj/721A3298.jpg',
+'https://i.ibb.co/1n3P22G/8.jpg',
+'https://i.ibb.co/HdrNq24/12.jpg',
+    'https://i.ibb.co/kSn6xjz/11.jpg',
+    'https://i.ibb.co/fX0DDJG/9.jpg',
+    'https://i.ibb.co/k4Sf5g0/6.jpg'
+
   ]
   Fashionarray:string[]=[
-  'https://i.ibb.co/q9j9VQJ/7.jpg',
-'https://i.ibb.co/1MfHLQZ/1.jpg',
-'https://i.ibb.co/hVg9Lnc/2.jpg',
-'https://i.ibb.co/RjNgq4Z/Home6.jpg',
+    'https://i.ibb.co/RjNgq4Z/Home6.jpg',
+    'https://i.ibb.co/hVg9Lnc/2.jpg',
+    'https://i.ibb.co/1MfHLQZ/1.jpg',
+
+
+
 'https://i.ibb.co/MR13R8f/4.jpg',
 'https://i.ibb.co/XJ53s8V/Home5.jpg',
+'https://i.ibb.co/q9j9VQJ/7.jpg',
 'https://i.ibb.co/TqcJknw/Home7.jpg']
 Fashion2:string[]=[
   'https://i.ibb.co/6gSD8yH/1.jpg',
@@ -71,6 +78,8 @@ Fashion5:string[]=[
 'https://i.ibb.co/YZDC2V9/2.jpg',
 'https://i.ibb.co/XxcLf2v/3.jpg']
   Defaultarray:string[]=[
+    'https://i.ibb.co/1m0pB9T/low-4-5vc.jpg',
+  "https://i.ibb.co/Zhg583F/Untitled-Capturee0671-cg2.jpg",
   'https://i.ibb.co/CbxbHqy/4.jpg',
 'https://i.ibb.co/87NvzjB/3.jpg',
 'https://i.ibb.co/r5j7PYj/Home3.jpg',
@@ -85,7 +94,10 @@ Fashion5:string[]=[
 'https://i.ibb.co/YZSrJs8/10.jpg',
 'https://i.ibb.co/Y73t08j/11.jpg']
 
-  Beautyarray:string[]=['https://i.ibb.co/27Wm4s2/1.jpg',
+  Beautyarray:string[]=['https://i.ibb.co/1m0pB9T/low-4-5vc.jpg',
+  "https://i.ibb.co/Zhg583F/Untitled-Capturee0671-cg2.jpg",
+  "https://i.ibb.co/FmD7k60/Untitled-Capture0701.jpg",
+  'https://i.ibb.co/27Wm4s2/1.jpg',
   'https://i.ibb.co/QKht9Mp/2.jpg',
 'https://i.ibb.co/XjZJsMz/3.jpg',
   'https://i.ibb.co/CbxbHqy/4.jpg',
@@ -143,12 +155,15 @@ Fashion5:string[]=[
   private type = new Subject<any>(); //need to create a subject
    typeString:string='Default';
 
-  setType(Type: string) { //the component that wants to update something, calls this fn
+  setType(Type: any) { //the component that wants to update something, calls this fn
             this.type.next(Type); //next() will feed the value in Subject
             this.typeString=Type;
+            window.sessionStorage.setItem('type',Type);
+            console.log(window.sessionStorage.getItem('type'));
         }
 
         getType(): Observable<any> { //the receiver component calls this function
+          this.type.next(window.sessionStorage.getItem('type'))
             return this.type.asObservable(); //it returns as an observable to which the receiver funtion will subscribe
         }
 
